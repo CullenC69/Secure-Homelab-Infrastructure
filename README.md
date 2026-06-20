@@ -25,6 +25,7 @@ High-level layout:
 
 <img width="851" height="875" alt="Screenshot 2026-06-21 064953" src="https://github.com/user-attachments/assets/e8add94a-72b4-4a52-8118-3d21f3a60613" />
 
+<br>
 
 ## Skills Demonstrated
 
@@ -33,6 +34,7 @@ High-level layout:
 3.   **Docker** – Designing Isolated Virtual bridges, Volume Mapping, and Multi-Service Management via Docker Compose and Portainer
 4.   **Security monitoring** – log collection, parsing, and visualization with ELK
 
+<br>
 
 ## Project Phases
 
@@ -40,7 +42,6 @@ High-level layout:
 - Provisioned a headless Ubuntu Server on dedicated hardware with static IP assignments
 - Applied a stateful host firewall ( UFW ) implementing a strict default-deny on all unauthorized incoming traffic
 - Hardened remote administratice access lines by restricting login verification solely to SSH keys
-
 
 ### Phase 2: Network Storage (Samba)
 
@@ -64,6 +65,7 @@ Parse logs using Logstash
 Store and query them in Elasticsearch
 Visualize activity in Kibana dashboards
 
+<br>
 
 ## Key Issues & Fixes
 IPv6 DNS Bypass (Phase 3)
@@ -79,6 +81,7 @@ Fix: Changed Pi-hole to accept all origins. This was safe because:
 The server is behind a router firewall
 UFW is still enforcing strict rules
 
+<br>
 
 ## Summary
 This lab is a practical way to learn how systems actually behave under real conditions—especially when things go wrong. It replaces managed services with self-hosted ones to give full visibility and control over the entire stack.

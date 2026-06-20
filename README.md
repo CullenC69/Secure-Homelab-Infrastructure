@@ -1,1 +1,1 @@
-# secure-homelab-infrastructure
+# Secure-Homelab-Infrastructure

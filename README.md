@@ -24,22 +24,21 @@ High-level layout:
 <img width="851" height="875" alt="Screenshot 2026-06-21 064953" src="https://github.com/user-attachments/assets/e8add94a-72b4-4a52-8118-3d21f3a60613" />
 
 
-## What This Project Covers
+## Skills Demonstrated
 
-1. Linux administration – system hardening, networking, permissions
-2. Networking – firewall rules, DNS control, traffic flow
-3. Docker – containerized services, networking, orchestration with Compose
-4. Security monitoring – log collection, parsing, and visualization with ELK
+### 1.   Linux Administration – System hardening, Networking, User Access Controls and File Permissions
+### 2.   Networking – Layer 3/4 Firewall Policies, DNS control and Packet Routing Analysis
+### 3.   Docker – Designing Isolated Virtual bridges, Volume Mapping, and Multi-Service Management via Docker Compose and Portainer
+### 4.   Security monitoring – log collection, parsing, and visualization with ELK
 
 
 ## Project Phases
 
 ### Phase 1: Hardened Linux Base
 
-Set up a headless Ubuntu server
-Configure static IP
-Apply a strict UFW firewall (default deny)
-Secure SSH with key-based authentication
+-  Set up a headless Ubuntu Server on dedicated hardware with static IP assignments
+-  Applied a stateful host firewall ( UFW ) implementing a strict default-deny on all unauthorized incoming traffic
+-  Hardened remote administratice access lines by restricting login verification solely to SSH keys
 
 ### Phase 2: Network Storage (Samba)
 

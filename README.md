@@ -16,6 +16,7 @@ Public cloud services are convenient, but they come with trade-offs:
 
 Instead, this lab is fully self-hosted. Everything runs on local hardware, so I have full control over data, configuration, and security.
 
+<br>
 
 ## Architecture
 The lab runs on a single Ubuntu server acting as a mini data center. Services are isolated using Docker and basic network segmentation.

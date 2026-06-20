@@ -26,10 +26,10 @@ High-level layout:
 
 ## Skills Demonstrated
 
-### 1.   Linux Administration – System hardening, Networking, User Access Controls and File Permissions
-### 2.   Networking – Layer 3/4 Firewall Policies, DNS control and Packet Routing Analysis
-### 3.   Docker – Designing Isolated Virtual bridges, Volume Mapping, and Multi-Service Management via Docker Compose and Portainer
-### 4.   Security monitoring – log collection, parsing, and visualization with ELK
+**1.   Linux Administration** – System hardening, Networking, User Access Controls and File Permissions
+**2.   Networking** – Layer 3/4 Firewall Policies, DNS control and Packet Routing Analysis
+**3.   Docker** – Designing Isolated Virtual bridges, Volume Mapping, and Multi-Service Management via Docker Compose and Portainer
+**4.   Security monitoring** – log collection, parsing, and visualization with ELK
 
 
 ## Project Phases

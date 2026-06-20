@@ -1,8 +1,10 @@
 # Secure Homelab Infrastructure
 
+
 ## Overview
 This repository documents the setup and evolution of my home lab, built to mirror a small-scale enterprise environment. It starts with a basic Ubuntu server hosted on a repurposed old PC, and grows into a system that includes private storage, network-level ad blocking, firewalls, and centralized logging with a SIEM stack.
 The goal is to move beyond theory and actually build, break, and secure systems in a hands-on way.
+
 
 ## Why I Built This
 Public cloud services are convenient, but they come with trade-offs:
@@ -12,6 +14,7 @@ Public cloud services are convenient, but they come with trade-offs:
 - Limited visibility – Managed services hide the underlying infrastructure, making it harder to learn and experiment.
 
 Instead, this lab is fully self-hosted. Everything runs on local hardware, so I have full control over data, configuration, and security.
+
 
 ## Architecture
 The lab runs on a single Ubuntu server acting as a mini data center. Services are isolated using Docker and basic network segmentation.
@@ -23,10 +26,11 @@ High-level layout:
 
 ## What This Project Covers
 
-Linux administration – system hardening, networking, permissions
-Networking – firewall rules, DNS control, traffic flow
-Docker – containerized services, networking, orchestration with Compose
-Security monitoring – log collection, parsing, and visualization with ELK
+1. Linux administration – system hardening, networking, permissions
+2. Networking – firewall rules, DNS control, traffic flow
+3. Docker – containerized services, networking, orchestration with Compose
+4. Security monitoring – log collection, parsing, and visualization with ELK
+
 
 ## Project Phases
 
@@ -58,6 +62,7 @@ Forward logs from the host via rsyslog
 Parse logs using Logstash
 Store and query them in Elasticsearch
 Visualize activity in Kibana dashboards
+
 
 ## Key Issues & Fixes
 IPv6 DNS Bypass (Phase 3)

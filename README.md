@@ -1,7 +1,7 @@
 # Secure Homelab Infrastructure
 
 ## Overview
-This repository documents the setup and evolution of my home lab, built to mirror a small-scale enterprise environment. It starts with a basic Ubuntu server and grows into a system that includes private storage, network-level ad blocking, firewalls, and centralized logging with a SIEM stack.
+This repository documents the setup and evolution of my home lab, built to mirror a small-scale enterprise environment. It starts with a basic Ubuntu server hosted on a repurposed old PC, and grows into a system that includes private storage, network-level ad blocking, firewalls, and centralized logging with a SIEM stack.
 The goal is to move beyond theory and actually build, break, and secure systems in a hands-on way.
 
 ## Why I Built This

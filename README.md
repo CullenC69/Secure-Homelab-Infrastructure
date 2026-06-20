@@ -35,10 +35,10 @@ High-level layout:
 ## Project Phases
 
 ### Phase 1: Hardened Linux Base
+- Provisioned a headless Ubuntu Server on dedicated hardware with static IP assignments
+- Applied a stateful host firewall ( UFW ) implementing a strict default-deny on all unauthorized incoming traffic
+- Hardened remote administratice access lines by restricting login verification solely to SSH keys
 
--  Set up a headless Ubuntu Server on dedicated hardware with static IP assignments
--  Applied a stateful host firewall ( UFW ) implementing a strict default-deny on all unauthorized incoming traffic
--  Hardened remote administratice access lines by restricting login verification solely to SSH keys
 
 ### Phase 2: Network Storage (Samba)
 

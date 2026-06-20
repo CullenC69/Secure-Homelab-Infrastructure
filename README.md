@@ -18,26 +18,7 @@ The lab runs on a single Ubuntu server acting as a mini data center. Services ar
 High-level layout:
 
 
-Host (Ubuntu Server)
-
-UFW firewall (default deny)
-rsyslog forwarding
-
-Docker network (172.18.0.x)
-
-Samba (NAS)
-Pi-hole (DNS filtering)
-ELK stack:
-
-Logstash (parsing)
-Elasticsearch (storage)
-Kibana (visualization)
-
-
-Client
-
-Personal Windows workstation used for testing
-
+<img width="851" height="875" alt="Screenshot 2026-06-21 064953" src="https://github.com/user-attachments/assets/e8add94a-72b4-4a52-8118-3d21f3a60613" />
 
 
 ## What This Project Covers

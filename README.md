@@ -75,6 +75,7 @@ High-level layout:
 
 ### 2. Docker Network Isolation (Phase 4)
 **Problem**: DNS requests weren’t reaching Pi-hole correctly from outside the container.  
+
 **Cause**: Docker’s NAT makes traffic appear as if it’s coming from a different subnet. Pi-hole blocks these by default (“allow only local requests”).  
 **Fix**: Modified the container interface listening behavior to "Permit All Origins." Assessing the risk, this was safe because: the server is behind a edge router firewall and UFW is still enforcing strict rules. Hence opening this interface does not expose the server to public internet exploitation vectors like DDoS attacks.
 

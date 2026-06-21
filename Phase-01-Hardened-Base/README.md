@@ -41,7 +41,7 @@ Rather than relying on post-installation network reconfiguration utilities, the 
 
 A strict default-deny firewall policy was implemented using UFW, blocking all incoming traffic which protecting the server from automated malicious port scanning or lateral indexing.
 
-### Explicit Exceptions Allowed:
+#### Explicit Exceptions Allowed:
 | Service | Port / Protocol | Traffic Type | Purpose |
 | :--- | :--- | :--- | :--- |
 | **SSH** | `22/TCP` | Inbound | Secure Remote Systems Administration |
@@ -60,6 +60,24 @@ The secure remote configuration parameters inside ```/etc/ssh/sshd_config``` wer
 
 #### Enforced Public-Key Architecture:
 * Swapped the standard, guessable alphanumeric string passwords for 4096-bit asymmetric key pairs (```PasswordAuthentication no```)
+
+<br>
+
+## Verification & Operational Validation
+To comfirm the defensive integrity of the deployment baseline prior to launching subsequent architecture phases, the following validations were executed:  
+
+### Firewall Policy Auditing
+Running ```sudo ufw status verbose``` outputs an explicit validation statement verifying the firewall is active, operating on system boot and dropping unexpected incoming packets while opening only designated ports  
+<img width="718" height="628" alt="Screenshot 2026-06-22 064705" src="https://github.com/user-attachments/assets/5fe35485-3208-41a1-8dcc-ed8618b759e1" />
+
+
+
+
+
+
+
+
+
 
 
 

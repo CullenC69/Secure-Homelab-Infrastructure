@@ -2,7 +2,7 @@
 
 <br>
 
-## Overview
+# Overview
 This repository documents the setup and evolution of my home lab, built to mirror a small-scale enterprise environment. It starts with a basic Ubuntu server hosted on a repurposed old PC, and grows into a system that includes private storage, network-level ad blocking, firewalls, and centralized logging with a SIEM stack.
 The goal is to move beyond theory and actually build, break, and secure systems in a hands-on way.
 
@@ -41,30 +41,27 @@ High-level layout:
 
 ### Phase 1: Hardened Linux Base
 - Provisioned a headless Ubuntu Server on dedicated hardware with static IP assignments
-- Applied a stateful host firewall ( UFW ) implementing a strict default-deny on all unauthorized incoming traffic
+- Applied a stateful host firewall ( ```UFW``` ) implementing a strict default-deny on all unauthorized incoming traffic
 - Hardened remote administratice access lines by restricting login verification solely to SSH keys
 
 ### Phase 2: Network Storage (Samba)
 
-Deploy a Samba container for local file storage
-Replace reliance on cloud drives
-Separate shared folders and private user directories
-Enforce permissions using Linux file controls
+- Deployed a native, multi-tenant Samba Network-Attached Storage directly on the host to eliminate needing cloud drive subscription
+- Enforced underlying Linux file system controls (chmod/chown) to gurantee security at the data-at-rest layer
+- Installed Portainer to have a centralized web dashboard for managing container lifecycles and real-time environment logs
+
 
 ### Phase 3: DNS Filtering (Pi-hole)
 
-Deploy Pi-hole as a network-wide DNS sinkhole
-Block ads, trackers, and telemetry at the DNS level
-Configure upstream DNS securely
-Apply curated blocklists
+- Deployed Pi-hole as a network-wide DNS sinkhole to intercept ads, malicious trackers and hardware telemetry
+- Configured strict, secure upstream DNS forwarders and applied curated ad-blocking gravity databases
+
 
 ### Phase 4: Logging & SIEM (ELK Stack)
 
-Build an ELK stack for centralized logging
-Forward logs from the host via rsyslog
-Parse logs using Logstash
-Store and query them in Elasticsearch
-Visualize activity in Kibana dashboards
+- Constructed an ELK Stack ( Elasticsearch, Logstash, Kibana ) engine to centralize system notifications
+- Configured the host's ```rsyslog``` daemon to pipe the background kernal updates, authentication states and ```sudo``` actions directly into the containerized infrastructure
+- Engineered a visual analytics dashboard inside Kibana to track login anomalies and process execution trails in real-time
 
 <br>
 

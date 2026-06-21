@@ -98,3 +98,22 @@ With the foundational infrastructure stable and monitored, the future iterations
 
 ## Summary
 This home lab serves as a self-directed, hands-on project designed to bridge the gap between theoretical cybersecurity and computer science concepts to real-world systems architecture. By building, deploying and securing this multi-tier infrastructure on physical hardware, I translated abstract ideas into a functional secure system which achieved several measurable outcomes:
+
+### Applied Protocol Analysis & Optimazation:
+
+Setting up the DNS-layer defense gave he hands-on experience with DNS routing and traffic analysis. By configuring it to block tracking and telemetry traffic at the source, I noticed improvements in network performance with faster page load times and reduced bandwidth usage.
+
+### Validating Local Data Control:
+
+Building the Samba NAS provided me with practical experience with data security, *role-based access control* (RBAC), and storage virtualization. This setup also replaced my reliance on cloud services like Google Drive demonstrating that full data control can be achieved on local infrastructure.
+
+### Advanced Systems Visibility:
+
+Creating the ELK logging pipeline gave me insight into system monitoring, event correlation, and data ingestion. It transformed large volumes of raw system logs into structured visualizations which simulates an enterprise-level Security Operations Center (SOC).
+
+
+
+
+
+
+

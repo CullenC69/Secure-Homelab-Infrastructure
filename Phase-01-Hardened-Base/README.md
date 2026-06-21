@@ -67,12 +67,16 @@ The secure remote configuration parameters inside ```/etc/ssh/sshd_config``` wer
 To comfirm the defensive integrity of the deployment baseline prior to launching subsequent architecture phases, the following validations were executed:  
 
 ### Firewall Policy Auditing
-Running ```sudo ufw status verbose``` outputs an explicit validation statement verifying the firewall is active, operating on system boot and dropping unexpected incoming packets while opening only designated ports  
+Running ```sudo ufw status verbose``` outputs an explicit validation statement verifying the firewall is active, operating on system boot and dropping unexpected incoming packets while opening only designated ports.  
 
 <img width="539" height="471" alt="Screenshot 2026-06-22 064705" src="https://github.com/user-attachments/assets/5fe35485-3208-41a1-8dcc-ed8618b759e1" />
 
+<br>
 
+### Remote Authentication Auditing
+Attempting to connect to the host without an explicitly mapped and verified cryptographic token drops the session at the handshake stage without processing standard passwords, neutralizing credential stuffing vectors.  
 
+<img width="458" height="54" alt="Screenshot 2026-06-22 070710" src="https://github.com/user-attachments/assets/94f22e43-32d1-4e12-92a2-4c2023a869db" />
 
 
 

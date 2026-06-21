@@ -30,9 +30,9 @@ Removed legacy, brute-forceable password authentication and enforcing exclusive 
 ## Technical Implementation Details
 
 ### 1. Pre-Boot Static Networking Provisioning
-Rather than relying on post-installation network reconfiguration utilities, the server's network profile was configured during the initial operating deployment phase. Binding the physical interface to a fixed local configuration layer ensures that downstream storage mappings (Samba) and SIEM log streams always target a predictable, unchanging destination. I also ensure that the IP assignment was outside my router's DHCP IP pool to prevent any IP address conflicts.
-* **Target Subnet Layout:** 192.168.0.0/24
-* **Assigned Host IP Location:** 192.168.0.x
+Rather than relying on post-installation network reconfiguration utilities, the server's network profile was configured during the initial operating deployment phase. Isolating the host's static IP assignment away from the router's dynamic DHCP pool to prevent the risk of IP duplication conflicts and guarantees that downstream storage mappings (Samba) and SIEM log streams always target an unchanging destination. 
+* **Target Subnet Layout:** 192.168.0.0
+* **Assigned Host IP Location:** 192.168.0.x (Outside dynamic DHCP scope)
 * **Primary Gateway Interation:** 192.168.0.1
 
 <br>
@@ -42,14 +42,14 @@ Rather than relying on post-installation network reconfiguration utilities, the 
 A strict default-deny firewall policy was implemented using UFW, blocking all incoming traffic which protecting the server from automated malicious port scanning or lateral indexing.
 
 ### Explicit Exceptions Allowed:
-Port ```22/tcp``` (SSH)  
-Port ```137,138/udp``` (Samba)  
-Port ```139,445/tcp``` (Samba)  
-Port ```53/udp``` (Pi-hole)  
-Port ```53/tcp``` (Pi-hole)  
-Port ```514/udp``` (Rsyslog Pipeline for SIEM ingestion)  
-Port ```514/tcp``` (Rsyslog Pipeline for SIEM ingestion)  
-Port ```5601/tcp``` (Kibana)
+| Service | Port / Protocol | Traffic Type | Purpose |
+| :--- | :--- | :--- | :--- |
+| **SSH** | `22/TCP` | Inbound | Secure Remote Systems Administration |
+| **Samba NAS** | `137/UDP`, `138/UDP` | Inbound | NetBIOS Name Service & Datagram Distribution |
+| **Samba NAS** | `139/TCP`, `445/TCP` | Inbound | Session Service & Direct SMB File Sharing |
+| **Pi-hole** | `53/UDP`, `53/TCP` | Inbound | Network-Wide DNS Resolution Queries |
+| **Rsyslog** | `514/UDP`, `514/TCP` | Inbound | Centralized Inbound Logging Pipeline for SIEM |
+| **Kibana** | `5601/TCP` | Inbound | SIEM Security Data Analytics Visual Web UI |
 
 <br>
 

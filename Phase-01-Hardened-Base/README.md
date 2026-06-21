@@ -1,4 +1,3 @@
-<img width="916" height="108" alt="Screenshot 2026-06-22 070710" src="https://github.com/user-attachments/assets/8c804028-ea7c-4d06-9ecf-5b69a594e52c" />
 # Summary
 
 This phase details the deployment, static provisioning and defensive configuration of a headless Ubuntu Server instance on bare-metal legacy hardware. As the foundation of any secure enterprise infrastructure relies on the absolute integrity of its base operating system, this phase is extremely important.  

@@ -37,7 +37,7 @@ Rather than relying on post-installation network reconfiguration utilities, the 
 
 <br>
 
-## Network Layer Hardening (Stateful Firewall)
+### 2. Network Layer Hardening (Stateful Firewall)
 
 A strict default-deny firewall policy was implemented using UFW, blocking all incoming traffic which protecting the server from automated malicious port scanning or lateral indexing.
 
@@ -46,9 +46,18 @@ Port ```22/tcp``` (SSH)
 Port ```137,138/udp``` (Samba)  
 Port ```139,445/tcp``` (Samba)  
 Port ```53/udp``` (Pi-hole)  
-Port ```53/tcp``` (Pi-hole)
+Port ```53/tcp``` (Pi-hole)  
 Port ```514/udp``` (Rsyslog Pipeline for SIEM ingestion)  
 Port ```514/tcp``` (Rsyslog Pipeline for SIEM ingestion)  
 Port ```5601/tcp``` (Kibana)
+
+### 3. Cryptographic Identity & Access Management (SSH)
+The secure remote configuration parameters inside ```/etc/ssh/sshd_config``` were audited to defend against automated dictionary and credential stuffing attacks targeting standard open administrative terminals.
+#### Disabled Root Interactivity:
+* Stopped administrative root users from establishing direct external connections (```PermitRootLogin no```)  
+
+#### Enforced Public-Key Architecture:
+* Swapped the standard, guessable alphanumeric string passwords for 4096-bit asymmetric key pairs (```PasswordAuthentication no```)
+
 
 

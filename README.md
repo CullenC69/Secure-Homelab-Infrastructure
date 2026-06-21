@@ -90,9 +90,11 @@ High-level layout:
 
 With the foundational infrastructure stable and monitored, the future iterations will focus more on scaling automation, threat emulation and advanced access control hardening:
 
-* **Phase 5: Centralized Identity & Access Management (IAM):**
+* **Phase 5: Centralized Identity & Access Management (IAM):** Integrate a centralized authentication provider like an open-source LDAP or Keycloak service to replace static Linux user accounts with localized *Single Sign-On* (SSO) and *Role-Based Access Controls* (RBAC) across my Samba NAS and Portainer environments.
+* **Phase 6: Network Segmentation (VLANs):** Transition from a single host-managed subnet to a managed Layer 2 swith environment to physically isolate the Docker testing bridge network from the primary home user LAN traffic.
+* **Phase 7: Active Threat Emulation:** Deploy a deliberate, isolated vulnerable container like a *honeypot* or *Metasploitable* instance inside the network to generate malicious traffic profiles to test the Kibana dashboard's capacity to alert on real-time port scans, brute-force attempts, and privilege escalations.
 
-
+<br>
 
 ## Summary
-This lab is a practical way to learn how systems actually behave under real conditions—especially when things go wrong. It replaces managed services with self-hosted ones to give full visibility and control over the entire stack.
+This home lab serves as a self-directed, hands-on project designed to bridge the gap between theoretical cybersecurity and computer science concepts to real-world systems architecture. By building, deploying and securing this multi-tier infrastructure on physical hardware, I translated abstract ideas into a functional secure system which achieved several measurable outcomes:

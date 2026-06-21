@@ -51,6 +51,8 @@ Port ```514/udp``` (Rsyslog Pipeline for SIEM ingestion)
 Port ```514/tcp``` (Rsyslog Pipeline for SIEM ingestion)  
 Port ```5601/tcp``` (Kibana)
 
+<br>
+
 ### 3. Cryptographic Identity & Access Management (SSH)
 The secure remote configuration parameters inside ```/etc/ssh/sshd_config``` were audited to defend against automated dictionary and credential stuffing attacks targeting standard open administrative terminals.
 #### Disabled Root Interactivity:

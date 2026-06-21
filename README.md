@@ -76,7 +76,7 @@ High-level layout:
 **Fix**: Disabled IPv6 on the client during testing to ensure all traffic went through Pi-hole.
 
 ### 2. Docker Network Isolation (Phase 4)
-**Problem**: DNS requests weren’t reaching Pi-hole correctly from outside the container.  
+<span style="font-size: 150%;">**Problem**</span>: DNS requests weren’t reaching Pi-hole correctly from outside the container.  
 
 **Cause**: Docker’s NAT makes traffic appear as if it’s coming from a different subnet. Pi-hole blocks these by default (“allow only local requests”).  
 

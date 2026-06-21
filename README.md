@@ -76,6 +76,7 @@ High-level layout:
 **Fix**: Disabled IPv6 on the client during testing to ensure all traffic went through Pi-hole.
 
 <br>
+
 ### 2. Docker Network Isolation (Phase 4)
 **Problem**: DNS requests weren’t reaching Pi-hole correctly from outside the container.  
 

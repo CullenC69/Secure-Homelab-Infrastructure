@@ -1,3 +1,4 @@
+<img width="916" height="108" alt="Screenshot 2026-06-22 070710" src="https://github.com/user-attachments/assets/8c804028-ea7c-4d06-9ecf-5b69a594e52c" />
 # Summary
 
 This phase details the deployment, static provisioning and defensive configuration of a headless Ubuntu Server instance on bare-metal legacy hardware. As the foundation of any secure enterprise infrastructure relies on the absolute integrity of its base operating system, this phase is extremely important.  
@@ -76,7 +77,8 @@ Running ```sudo ufw status verbose``` outputs an explicit validation statement v
 ### Remote Authentication Auditing
 Attempting to connect to the host without an explicitly mapped and verified cryptographic token drops the session at the handshake stage without processing standard passwords, neutralizing credential stuffing vectors.  
 
-<img width="687" height="81" alt="Screenshot 2026-06-22 070710" src="https://github.com/user-attachments/assets/94f22e43-32d1-4e12-92a2-4c2023a869db" />
+<img width="687" height="81" alt="Screenshot 2026-06-22 070710" src="https://github.com/user-attachments/assets/217c667f-2fbf-4f80-9dfa-587b5cea7db2" />
+
 
 
 

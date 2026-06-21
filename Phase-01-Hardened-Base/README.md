@@ -68,6 +68,7 @@ To comfirm the defensive integrity of the deployment baseline prior to launching
 
 ### Firewall Policy Auditing
 Running ```sudo ufw status verbose``` outputs an explicit validation statement verifying the firewall is active, operating on system boot and dropping unexpected incoming packets while opening only designated ports  
+
 <img width="718" height="628" alt="Screenshot 2026-06-22 064705" src="https://github.com/user-attachments/assets/5fe35485-3208-41a1-8dcc-ed8618b759e1" />
 
 

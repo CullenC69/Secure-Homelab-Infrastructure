@@ -75,6 +75,7 @@ High-level layout:
 
 **Fix**: Disabled IPv6 on the client during testing to ensure all traffic went through Pi-hole.
 
+<br>
 ### 2. Docker Network Isolation (Phase 4)
 **Problem**: DNS requests weren’t reaching Pi-hole correctly from outside the container.  
 
@@ -83,6 +84,14 @@ High-level layout:
 **Fix**: Modified the container interface listening behavior to "Permit All Origins." Assessing the risk, this was safe because: the server is behind a edge router firewall and UFW is still enforcing strict rules. Hence opening this interface does not expose the server to public internet exploitation vectors like DDoS attacks.
 
 <br>
+
+## Future Roadmap & Scaling Plans
+
+With the foundational infrastructure stable and monitored, the future iterations will focus more on scaling automation, threat emulation and advanced access control hardening:
+
+* **Phase 5: Centralized Identity & Access Management (IAM):**
+
+
 
 ## Summary
 This lab is a practical way to learn how systems actually behave under real conditions—especially when things go wrong. It replaces managed services with self-hosted ones to give full visibility and control over the entire stack.

@@ -76,7 +76,7 @@ Running ```sudo ufw status verbose``` outputs an explicit validation statement v
 ### Remote Authentication Auditing
 Attempting to connect to the host without an explicitly mapped and verified cryptographic token drops the session at the handshake stage without processing standard passwords, neutralizing credential stuffing vectors.  
 
-<img width="458" height="54" alt="Screenshot 2026-06-22 070710" src="https://github.com/user-attachments/assets/94f22e43-32d1-4e12-92a2-4c2023a869db" />
+<img width="687" height="81" alt="Screenshot 2026-06-22 070710" src="https://github.com/user-attachments/assets/94f22e43-32d1-4e12-92a2-4c2023a869db" />
 
 
 

@@ -47,7 +47,7 @@ High-level layout:
 ### Phase 2: Network Storage (Samba)
 
 - Deployed a native, multi-tenant Samba Network-Attached Storage directly on the host to eliminate needing cloud drive subscription
-- Enforced underlying Linux file system controls (chmod/chown) to gurantee security at the data-at-rest layer
+- Enforced underlying Linux file system controls (```chmod```/```chown```) to gurantee security at the data-at-rest layer
 - Installed Portainer to have a centralized web dashboard for managing container lifecycles and real-time environment logs
 
 
@@ -66,18 +66,17 @@ High-level layout:
 <br>
 
 ## Key Issues & Fixes
-IPv6 DNS Bypass (Phase 3)
-Problem: Ads were still getting through even after configuring Pi-hole.
-Cause: The system was using IPv6 DNS instead of IPv4. Many OSes prefer IPv6 when available, which bypassed Pi-hole.
-Fix: Disabled IPv6 on the client during testing to ensure all traffic went through Pi-hole.
 
-### Docker Network Isolation (Phase 4)
-Problem: DNS requests weren’t reaching Pi-hole correctly from outside the container.
-Cause: Docker’s NAT makes traffic appear as if it’s coming from a different subnet. Pi-hole blocks these by default (“allow only local requests”).
-Fix: Changed Pi-hole to accept all origins. This was safe because:
+### 1. The Dual-Stack IPv6 DNS Bypass ( Phase 3 )
 
-The server is behind a router firewall
-UFW is still enforcing strict rules
+**Problem**: Ads were still getting through to client machine even after configuring the Pi-hole IPv4 address.
+**Cause**:  Modern OSes inherently favor the IPv6 protocol stack over IPv4, hence the client system completely bypassed the local IPv4 Pi-hole resolver
+**Fix**: Disabled IPv6 on the client during testing to ensure all traffic went through Pi-hole.
+
+### 2. Docker Network Isolation (Phase 4)
+**Problem**: DNS requests weren’t reaching Pi-hole correctly from outside the container.
+**Cause**: Docker’s NAT makes traffic appear as if it’s coming from a different subnet. Pi-hole blocks these by default (“allow only local requests”).
+**Fix**: Modified the container interface listening behavior to "Permit All Origins." Assessing the risk, this was safe because: the server is behind a edge router firewall and UFW is still enforcing strict rules. Hence opening this interface does not expose the server to public internet exploitation vectors like DDoS attacks.
 
 <br>
 

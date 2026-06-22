@@ -47,9 +47,15 @@ sudo ufw enable
 # 2. Secure Remote Configuration (SSH Key Hardening)
 To replace the vulnerable password logins with cryptographic authentication, the public key was generated in the Windows workstation and was transfered and authorized in this following process:  
 
-## Generating the SSH Key Pair (Personal Workstation)
-I first start with generating a modern and highly secure Ed25519 key pair:
+## Generating the SSH Key Pair (Windows Workstation)
+From a Windows Powershell terminal, I first start with generating a modern and highly secure Ed25519 key pair on my Windows workstation:
 ```
-ssh-keygen -t ed25519 -C "homelab-workstation"
+ssh-keygen -t ed25519 -C "homelab-workstation"  
 ```
+## View and Copy the Public Key (Windows Workstation)
+As the native Linux utility command ```ssh-copy-id``` is unavailable on Windows key, we will have to manually view and copy the public key onto the Ubuntu Server:
+```
+Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub"
+```
+
 

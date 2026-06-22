@@ -82,7 +82,7 @@ nano ~/.ssh/authorized_keys
 <br>
 
 ## Enforce Strict Linux File Permissions (Ubuntu Server)
-Due to strict access controls required by Linux, we need to change the permissions of the directory and keys file:
+#### Due to strict access controls required by Linux, we need to change the permissions of the directory and keys file:
 ```
 #Only the owner can read/write/execute
 chmod 700 ~/.ssh
@@ -90,12 +90,32 @@ chmod 700 ~/.ssh
 #Only the owner can read/write
 chmod 600 ~/.ssh/authorized_keys
 ```
+#### Next we test it by opening a terminal on the Windows and running the `SSH` command to ensure its working.
 
 <br>
 
 # 3. Disable Password Logins Globally (Ubuntu Server)
 
+#### Once the key-based login is successfully tested and comfirmed working, we now modify the main config file on the server to lock out the standard credentials:
+```
+sudo nano /etc/ssh/sshd_config
+```
 
+<br>
+
+#### We then update and uncomment the following lines to enforce absolute key-only access:
+```
+PubkeyAuthentication yes
+PasswordAuthentication no
+PermitRootLogin no
+```
+
+<br>
+
+#### Lastly we need to restart the SSH service to pull the new security rules into active memory:
+```
+sudo systemctl restart ssh
+```
 
 
 

@@ -1,4 +1,4 @@
-# Stateful Host Firewall Setup (UFW)
+# 1. Stateful Host Firewall Setup (UFW)
 
 These were the following commands I ran directly on the Ubuntu Server terminal to establish a default-deny posture and open required ports for other services:  
 
@@ -8,4 +8,6 @@ sudo ufw default deny incoming
 sudo ufw default allow outgoing  
 ```
 #### Open Port for SSH
-`sudo ufw allow 22/tcp`  
+```
+sudo ufw allow 22/tcp  
+```

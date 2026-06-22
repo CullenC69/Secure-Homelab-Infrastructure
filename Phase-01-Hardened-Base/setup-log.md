@@ -47,6 +47,8 @@ sudo ufw enable
 # 2. Secure Remote Configuration (SSH Key Hardening)
 To replace the vulnerable password logins with cryptographic authentication, the public key was generated in the Windows workstation and was transfered and authorized in this following process:  
 
+<br>
+
 ## Generating the SSH Key Pair (Windows Workstation)
 From a Windows Powershell terminal, I first start with generating a modern and highly secure Ed25519 key pair on my Windows workstation:
 ```
@@ -60,5 +62,41 @@ As the native Linux utility command ```ssh-copy-id``` is unavailable on Windows 
 ```
 Get-Content "$env:USERPROFILE\.ssh\id_ed25519.pub"
 ```
+
+<br>
+
+## Create the Remote SSH Directory (Ubuntu Server)
+We then need to login into the server and initialize the hidden SSH configuration directory in the home directory:
+```
+mkdir -p ~/.ssh
+```
+
+<br>
+
+## Authorize the Workstation Key (Ubuntu Server)
+We then append the coppied public key from the workstation into the server's authorized deployment file using a text editor, I used ```nano``` to achieve this:
+```
+nano ~/.ssh/authorized_keys
+```
+
+<br>
+
+## Enforce Strict Linux File Permissions (Ubuntu Server)
+Due to strict access controls required by Linux, we need to change the permissions of the directory and keys file:
+```
+#Only the owner can read/write/execute
+chmod 700 ~/.ssh
+
+#Only the owner can read/write
+chmod 600 ~/.ssh/authorized_keys
+```
+
+<br>
+
+# 3. Disable Password Logins Globally (Ubuntu Server)
+
+
+
+
 
 

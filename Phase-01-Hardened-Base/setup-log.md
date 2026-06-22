@@ -4,6 +4,7 @@ These were the following commands I ran directly on the Ubuntu Server terminal t
 
 #### This command blocks all incoming traffic by default, and allow outgoing traffic  
 ```
+# sss
 sudo ufw default deny incoming
 sudo ufw default allow outgoing  
 ```

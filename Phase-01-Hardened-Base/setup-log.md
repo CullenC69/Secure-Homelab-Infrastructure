@@ -38,5 +38,10 @@ sudo ufw allow 5601/tcp
 
 #### Enable the firewall configuration to run on system boot
 ```
-sudo ufw enable
+sudo ufw enable  
 ```
+---
+
+<br>
+
+# 2. SSH Key Hardening

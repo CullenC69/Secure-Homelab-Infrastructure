@@ -44,4 +44,6 @@ sudo ufw enable
 
 <br>
 
-# 2. SSH Key Hardening
+# 2. Secure Remote Configuration (SSH Key Hardening)
+
+

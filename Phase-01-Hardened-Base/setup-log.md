@@ -45,5 +45,11 @@ sudo ufw enable
 <br>
 
 # 2. Secure Remote Configuration (SSH Key Hardening)
+To replace the vulnerable password logins with cryptographic authentication, the public key was generated in the Windows workstation and was transfered and authorized in this following process:  
 
+## Generating the SSH Key Pair (Personal Workstation)
+I first start with generating a modern and highly secure Ed25519 key pair:
+```
+ssh-keygen -t ed25519 -C "homelab-workstation"
+```
 

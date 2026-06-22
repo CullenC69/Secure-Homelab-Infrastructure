@@ -52,6 +52,9 @@ From a Windows Powershell terminal, I first start with generating a modern and h
 ```
 ssh-keygen -t ed25519 -C "homelab-workstation"  
 ```
+
+<br>
+
 ## View and Copy the Public Key (Windows Workstation)
 As the native Linux utility command ```ssh-copy-id``` is unavailable on Windows key, we will have to manually view and copy the public key onto the Ubuntu Server:
 ```

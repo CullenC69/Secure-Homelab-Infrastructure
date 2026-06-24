@@ -1,4 +1,4 @@
-# Phase 2: Samba (Network Storage) & Automated Container Management (Portainer)
+# Phase 2: Network Storage (Samba) & Automated Container Management (Portainer)
 
 ## Summary  
 
@@ -17,3 +17,13 @@ Configured a native Linux SMB server directly on the host, enabling cross-platfo
 
 ### Multi-User Access Controls:
 Enforced Linux permissions (`chmod`, `chown`) amd Samba user accounts to keep data isloated between public and private shares
+
+<br>
+
+### Docker Engine Deployment:
+Installed Docker to run lightweight, container-based services instead of resource-heavy virtual machines
+
+<br>
+
+### Portainer Management:
+Added a web-based dashboard to easily manage, monitor and track containers

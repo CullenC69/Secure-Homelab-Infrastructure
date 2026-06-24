@@ -1,4 +1,4 @@
-# Phase 2: Samba (Network Storage) & Automated container management (Portainer)
+# Phase 2: Samba (Network Storage) & Automated Container Management (Portainer)
 
 ## Summary  
 

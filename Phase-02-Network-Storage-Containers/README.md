@@ -9,3 +9,13 @@ A key design choice was seperating the roles, I ran Samba directly on the host f
 <br>
 
 ## Core Tasks Achieved
+
+<br>
+
+### Native Samba NAS Provisioning:
+Configured a native Linux SMB server directly on the host, enabling cross-platform file sharing across the local network
+
+<br>
+
+### Multi-User Access Controls:
+Enforced Linux permissions (`chmod`, `chown`) amd Samba user accounts to keep data isloated between public and private shares

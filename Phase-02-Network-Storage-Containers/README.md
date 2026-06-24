@@ -8,9 +8,7 @@ A key design choice was seperating the roles, I ran Samba directly on the host f
 
 <br>
 
-## Core Tasks Achieved
-
-<br>
+## Core Tasks Achieved  
 
 ### Native Samba NAS Provisioning:
 Configured a native Linux SMB server directly on the host, enabling cross-platform file sharing across the local network

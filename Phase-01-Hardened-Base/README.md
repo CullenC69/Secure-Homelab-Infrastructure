@@ -1,4 +1,8 @@
-# Summary
+# Phase 1: Hardened Linux Base Platform
+
+<br>
+
+## Summary
 
 This phase details the deployment, static provisioning and defensive configuration of a headless Ubuntu Server instance on bare-metal legacy hardware. As the foundation of any secure enterprise infrastructure relies on the absolute integrity of its base operating system, this phase is extremely important.  
 By stripping away unnecessary graphical subsystems and desktop software, the platform's initial *attack surface* was minimized. This set up a secure, default-deny baseline to protect the system before launching storage and containerized services.

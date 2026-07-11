@@ -40,5 +40,9 @@ Conversely, my administrative tools like Portainer was intentionally encapsulate
 
 ### 2. File System Permission Matrix (Data-at-Rest Security)
 To securely support multiple users on the local network, access controls were at enforced at both the Linux OS level and the Samba server level:
-* **Public Share:** Anonymus users have read-only access, while authenticated users are required to modify or delete files.
+* **Public Share:** Anonymous users have read-only access, while authenticated users are required to modify or delete files.  
 * **Private Shares:** Access is restricted to specific Linux user groups. Users outside these groups cannot access or browse these directories, preventing unauthorized data exposure.
+
+<br>
+
+## Verification

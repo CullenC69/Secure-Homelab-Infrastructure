@@ -34,4 +34,4 @@ Added a web-based dashboard to easily manage, monitor and track containers
 ### 1. Hybrid Storage & Virtualization Architecture
 Rather than virtualizing the file storage system inside a heavy nested wrapper, Samba was installed directly onto the Ubuntu base which gives the storage direct and high performance access to the server's physical drives  
 
-Conversely, my administrative tools like Portainer was intentionally encapsulated inside the isolyed Docker environments. This ensures that if a containerized web tool is ever compromised, the attackers remained trapped within a restricted container and completely isolated from the hsrt server's root directory.
+Conversely, my administrative tools like Portainer was intentionally encapsulated inside the isolated Docker environments. This ensures that if a containerized web tool is ever compromised, the attackers remained trapped within a restricted container and completely isolated from the host server's root directory.

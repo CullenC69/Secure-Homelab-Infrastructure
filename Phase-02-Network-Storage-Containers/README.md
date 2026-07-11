@@ -45,4 +45,13 @@ To securely support multiple users on the local network, access controls were at
 
 <br>
 
-## Verification
+## Verification & Operational Validation
+The storage system and container environment were then validated to ensure they were operating correctly.  
+
+<br>
+
+### Container Environment Health
+A system process audit was performed to verify that the Docker engine was running properly and that the Portainer management interface was successfully connected to its isolated web dashboard.  
+<img width="1666" height="249" alt="Screenshot 2026-07-11 211417" src="https://github.com/user-attachments/assets/69d1a461-d151-4f6a-ba7b-049b22a6ea9e" />
+
+

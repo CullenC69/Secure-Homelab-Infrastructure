@@ -27,4 +27,11 @@ One of the key benefits of deploying Pi-hole was gaining centralized control ove
 
 <br>
 
-## Verification & Validation
+## Verification & Operational Validation
+
+### Active Container Auditing
+To verify the container status to comfirm the Pi-hole instance is active and correctly mapping external DNS requests (Port 53) and web administration controls (Port 8080) to the container environment we will use the `sudo docker ps` command:
+
+<img width="2251" height="231" alt="Screenshot 2026-07-18 034412" src="https://github.com/user-attachments/assets/3b4c9f2f-adf4-4c69-904d-9fa8faa3cb5f" />
+
+

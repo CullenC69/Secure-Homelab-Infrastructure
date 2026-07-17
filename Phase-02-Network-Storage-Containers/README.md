@@ -71,9 +71,7 @@ Running a local `testparm -s` check on the host infrastructure verifies that the
 
 <img width="1480" height="986" alt="Screenshot 2026-07-17 232339" src="https://github.com/user-attachments/assets/c7fa7521-faba-4c83-b29a-39307eefc8d2" />
 
-<br>
 
-A
 
 
 

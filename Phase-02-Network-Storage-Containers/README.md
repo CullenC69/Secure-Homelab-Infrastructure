@@ -44,6 +44,7 @@ The storage system and container environment were then validated to ensure they 
 
 ### Container Environment Health
 A system process audit was performed to verify that the Docker engine was running properly and that the Portainer management interface was successfully connected to its isolated web dashboard.  
+
 <img width="2075" height="175" alt="Screenshot 2026-07-11 211417" src="https://github.com/user-attachments/assets/0b5ff111-eef3-4044-897f-0f789b7c3dec" />  
 
 <br>
@@ -51,12 +52,14 @@ A system process audit was performed to verify that the Docker engine was runnin
 ### Samba Shared Access Auditing
 To validate access controls from the Windows testing workstation, `net` command was used to test the connection boundaries against the authenticated `NAS` storage pool  
 #### Unauthenticated Access Validation (Client-Side Policy Enforcement):  
+
 <img width="1452" height="220" alt="Screenshot 2026-07-17 230457" src="https://github.com/user-attachments/assets/66700446-2efa-4f00-a62c-1296d6afb253" />  
 
 <br>
 
 #### Authorized Access Validation (Success):
-Providing the right Samba credentials mapped for the host administrator (cullen) successfully bypasses anonymous restrictions and mounts the high-performance volume over secure SMB Direct channels:
+Providing the right Samba credentials mapped for the host administrator (cullen) successfully bypasses anonymous restrictions and mounts the high-performance volume over secure SMB Direct channels:  
+
 <img width="1248" height="61" alt="Screenshot 2026-07-17 224837" src="https://github.com/user-attachments/assets/52b85373-2575-43b8-9146-5d58da5dfeef" />
 
 <br>

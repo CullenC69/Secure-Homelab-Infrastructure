@@ -11,19 +11,13 @@ A key design choice was seperating the roles, I ran Samba directly on the host f
 ## Core Tasks Achieved  
 
 ### Native Samba NAS Provisioning:
-Configured a native Linux SMB server directly on the host, enabling cross-platform file sharing across the local network
-
-<br>
+Configured a native Linux SMB server directly on the host, enabling cross-platform file sharing across the local network  
 
 ### Multi-User Access Controls:
-Enforced Linux permissions (`chmod`, `chown`) amd Samba user accounts to keep data isloated between public and private shares
-
-<br>
+Enforced Linux permissions (`chmod`, `chown`) amd Samba user accounts to keep data isloated between public and private shares  
 
 ### Docker Engine Deployment:
-Installed Docker to run lightweight, container-based services instead of resource-heavy virtual machines
-
-<br>
+Installed Docker to run lightweight, container-based services instead of resource-heavy virtual machines  
 
 ### Portainer Management:
 Added a web-based dashboard to easily manage, monitor and track containers

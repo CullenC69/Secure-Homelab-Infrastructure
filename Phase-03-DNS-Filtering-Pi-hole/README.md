@@ -20,6 +20,11 @@ Updated UFW rules to allow DNS traffic across the local network while keeping ma
 ## Technical Implementation Details
 
 ### 1. The Port 53 Challenge
-While setting up Pi-hole, I discovered that Ubuntu's built-in systemd-resolved service was already occupying Port 53, creating a conflict with the Pi-hole container. To resolve this I disabled the system's DNS stub listener and redirected DNS requests to the Docker-hosted Pi-hole service which allowed it to manage DNS traffic across the network.
+While setting up Pi-hole, I discovered that Ubuntu's built-in systemd-resolved service was already occupying Port 53, creating a conflict with the Pi-hole container. To resolve this I disabled the system's DNS stub listener and redirected DNS requests to the Docker-hosted Pi-hole service which allowed it to manage DNS traffic across the network.  
 
+### 2. Network-Wide Ad Blocking and Tracking Protection
+One of the key benefits of deploying Pi-hole was gaining centralized control over outbound DNS traffic. By filtering requests for known advertising and tracking domains and redirecting them to 0.0.0.0, I was able to stop unnecessary connections before they left the network. This not only improved privacy and bandwidth efficiency but also provided valuable insight into the types of external services devices were attempting to access.
 
+<br>
+
+## Verification & Validation

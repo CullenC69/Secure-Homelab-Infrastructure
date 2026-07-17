@@ -2,6 +2,8 @@
 In this phase it focuses on network-wide defense and local traffic orhestration by deploying a Pi-hole DNS sinkhole. By intercepting DNS requests at the network perimeter, this layer blocks telemetry, advertisements, and known malicious domains for all connected assets without requiring device-specific software. 
 Additionally we also did local DNS mapping allowing the infrastructure to resolve friendly domain names like (portainer.local) directly to the host IP. Expanding on the virtualization foundation in Phase 2, the DNS architecture is fully deployed as an isolated Docker container, maintaining a strict separation between core network utilities and the host operating system.
 
+<br>
+
 ## Core Tasks Achieved
 ### **Containerized DNS Sinkholing:** 
 Deployed Pi-hole in Docker to provide fast, network wide DNS filtering.  

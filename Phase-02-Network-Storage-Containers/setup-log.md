@@ -21,3 +21,12 @@ sudo mkdir -p /srv/samba/public
 sudo mkdir -p /srv/samba/private/user1
 ```
 
+Next we set the correct ownership and permissions:
+
+```
+sudo chown -R user1:user1 /srv/samba/private/user1
+sudo chmod 700 /srv/samba/private/user1
+sudo chmod -R 775 /srv/samba/public
+```
+
+

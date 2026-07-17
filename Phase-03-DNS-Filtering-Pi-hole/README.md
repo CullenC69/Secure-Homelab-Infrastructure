@@ -14,3 +14,12 @@ Created custom local DNS records to eliminate the need for manial IP address tra
 
 ### **Stateful Firewall Integration:** 
 Updated UFW rules to allow DNS traffic across the local network while keeping management interfaces protected.
+
+<br>
+
+## Technical Implementation Details
+
+### 1. The Port 53 Challenge
+While setting up Pi-hole, I discovered that Ubuntu's built-in systemd-resolved service was already occupying Port 53, creating a conflict with the Pi-hole container. To resolve this I disabled the system's DNS stub listener and redirected DNS requests to the Docker-hosted Pi-hole service which allowed it to manage DNS traffic across the network.
+
+

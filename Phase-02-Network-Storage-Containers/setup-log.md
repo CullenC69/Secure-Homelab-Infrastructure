@@ -46,7 +46,8 @@ sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
 
 sudo nano /etc/samba/smb.conf
 ```
-We then add the Public and Private shares at the bottom of the config file, here is mine for example:
+We then add the Public and Private shares at the bottom of the config file, here is mine for example:  
+
 <img width="735" height="317" alt="Screenshot 2026-07-18 013231" src="https://github.com/user-attachments/assets/fe2f19de-8a8e-4cf9-8ea1-eea24958a524" />
 
 Lastly restart Samba to apply the changes:

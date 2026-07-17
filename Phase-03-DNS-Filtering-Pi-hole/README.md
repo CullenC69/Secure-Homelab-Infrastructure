@@ -35,7 +35,8 @@ To verify the container status to comfirm the Pi-hole instance is active and cor
 <img width="2814" height="236" alt="Screenshot 2026-07-18 034412" src="https://github.com/user-attachments/assets/82df1c29-7b82-45f2-9ad1-2c2c05e38043" />  
 
 ### DNS Resolution Verification (Client Testing)
-Running a targeted name resolution test from a client workstation validates that the server is successfully parsing queries and blocking unwanted tracking nodes:
+Running a targeted name resolution test from a client workstation validates that the server is successfully parsing queries and blocking unwanted tracking nodes:  
+
 <img width="841" height="156" alt="Screenshot 2026-07-18 035713" src="https://github.com/user-attachments/assets/d076584a-de9d-44e4-ac0b-ffc167ae2753" />
 
 

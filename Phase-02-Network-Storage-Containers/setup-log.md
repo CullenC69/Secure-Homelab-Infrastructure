@@ -55,5 +55,39 @@ Lastly restart Samba to apply the changes:
 sudo systemctl restart smbd
 ```
 
+<br>
 
+# 2. Docker & Portainer Setup
 
+### Installation of Docker
+Instead of installing the older version of Docker found in the standard Ubuntu repositories, the official Docker repository is mapped directly. This ensures the server gets immediate security patches and verifies the software using official cryptographic keys:
+
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+sudo apt update
+sudo apt install docker-ce docker-ce-cli containerd.io -y
+```
+
+### Installation and Deployment of Portainer
+We then need to create a Docker volume to store Portainer's data:
+
+```
+sudo docker volume create portainer_data
+```
+
+Next we run the Portainer container, bounding it to port 9000 and ensuring that it runs on startup:
+
+```
+sudo docker run -d \
+  -p 9000:9000 \
+  --name=portainer \
+  --restart=always \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v portainer_data:/data \
+  portainer/portainer-ce:latest
+```

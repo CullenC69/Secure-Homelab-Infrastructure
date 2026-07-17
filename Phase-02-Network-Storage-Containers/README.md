@@ -50,7 +50,8 @@ A system process audit was performed to verify that the Docker engine was runnin
 
 ### Samba Shared Access Auditing
 To validate access controls from the Windows testing workstation, `net` command was used to test the connection boundaries against the authenticated `NAS` storage pool  
-#### Authorized Access Validation (Access Denied)
+#### Unauthenticated Access Validation (Client-Side Policy Enforcement):  
+<img width="1452" height="220" alt="Screenshot 2026-07-17 230457" src="https://github.com/user-attachments/assets/66700446-2efa-4f00-a62c-1296d6afb253" />
 
 
 

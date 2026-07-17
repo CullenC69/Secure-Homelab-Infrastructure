@@ -47,7 +47,9 @@ A system process audit was performed to verify that the Docker engine was runnin
 
 <img width="2075" height="175" alt="Screenshot 2026-07-11 211417" src="https://github.com/user-attachments/assets/0b5ff111-eef3-4044-897f-0f789b7c3dec" />  
 
+
 <br>
+
 
 ### Samba Shared Access Auditing
 To validate access controls from the Windows testing workstation, `net` command was used to test the connection boundaries against the authenticated `NAS` storage pool  

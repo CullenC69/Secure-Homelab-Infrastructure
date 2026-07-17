@@ -1,4 +1,4 @@
-# Native Samba NAS Installation & Configuration  
+# 1. Native Samba NAS Installation & Configuration  
 These were the following commands I used on the Ubuntu Server terminal to establish the file storage services:  
 
 
@@ -27,6 +27,24 @@ Next we set the correct ownership and permissions:
 sudo chown -R user1:user1 /srv/samba/private/user1
 sudo chmod 700 /srv/samba/private/user1
 sudo chmod -R 775 /srv/samba/public
+```
+
+### Creation of Samba User
+
+We then need to add the Linux user to Samba since Samba uses its own password database instead of standard Linux account passwords:
+
+```
+sudo smbpassword -a userexample
+```
+
+### Configuration of Samba
+
+The configuration file is located at `/etc/samba/smb.conf` and we need to firstly make a back up and then append the active file it with custom directory rules:
+```
+# Backup
+sudo cp /etc/samba/smb.conf /etc/samba/smb.conf.bak
+
+sudo nano /etc/samba/smb.conf
 ```
 
 

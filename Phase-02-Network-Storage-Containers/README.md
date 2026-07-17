@@ -62,7 +62,7 @@ Providing the right Samba credentials mapped for the host administrator (cullen)
 <br>
 
 #### Local Parameter Auditing:
-Running a local `testparm -s` check on the host infrastructure verifies that the active daemon configuration is aligned with security expectations, showing the active path mapping and the restricted user validation
+Running a local `testparm -s` check on the host infrastructure verifies that the active daemon configuration is aligned with security expectations, showing the active path mapping and the restricted user validation  
 <img width="1480" height="986" alt="Screenshot 2026-07-17 232339" src="https://github.com/user-attachments/assets/c7fa7521-faba-4c83-b29a-39307eefc8d2" />
 
 

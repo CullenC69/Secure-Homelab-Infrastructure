@@ -50,6 +50,7 @@ The storage system and container environment were then validated to ensure they 
 
 ### Container Environment Health
 A system process audit was performed to verify that the Docker engine was running properly and that the Portainer management interface was successfully connected to its isolated web dashboard.  
+<img width="2075" height="175" alt="Screenshot 2026-07-11 211417" src="https://github.com/user-attachments/assets/0b5ff111-eef3-4044-897f-0f789b7c3dec" />  
 
 <br>
 
@@ -58,6 +59,6 @@ To validate access controls from the Windows testing workstation, `net` command 
 #### Authorized Access Validation (Access Denied)
 
 
-<img width="2075" height="175" alt="Screenshot 2026-07-11 211417" src="https://github.com/user-attachments/assets/0b5ff111-eef3-4044-897f-0f789b7c3dec" />
+
 
 

@@ -36,7 +36,7 @@ Since the ELK services run inside a Docker bridge network, the host system canno
 ### Elasticsearch Shard and Index Health Status
 We can run an internal API check to comfirm that Elasticsearch is writing log files and organizing it correctly with no signs of performance or cluster health issues
 
-<img width="1441" height="253" alt="Screenshot 2026-07-18 192706" src="https://github.com/user-attachments/assets/82a9cd27-50e7-46d5-ad20-92469ca2b87f" />
+<img width="1441" height="253" alt="Screenshot 2026-07-18 192706" src="https://github.com/user-attachments/assets/82a9cd27-50e7-46d5-ad20-92469ca2b87f" />  
 
 <br>
 

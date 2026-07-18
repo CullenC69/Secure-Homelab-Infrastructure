@@ -29,3 +29,5 @@ The ELK stack is notorious for its heavy memory requirements, particularly becau
 ### 2. Connecting the Host to the Container Network
 Since the ELK services run inside a Docker bridge network, the host system cannot send logs to them directly. To enable communication, Logstash was configured to listen on a custom non-privileged port (5140). The host's rsyslog service was then configured to forward log data to this port, allowing events to flow reliably into the ELK stack.
 
+## Verification & Operational Validation
+

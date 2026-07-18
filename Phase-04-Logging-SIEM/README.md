@@ -18,3 +18,14 @@ I created a custom Logstash pipeline to parse syslog data and store it in Elasti
 
 #### Network & Firewall Security
 Restricted access to management interfaces while keeping log collection and ingestion services operational
+
+<br>
+
+## Technical Implementation Details
+
+### 1. Managing Resource Usage
+The ELK stack is notorious for its heavy memory requirements, particularly because Elasticsearch and Logstash rely on the Java Virtual Machine (JVM). Having previously experienced VM instability and crashes caused by ELK's resource consumption, I prioritized memory management during deployment. JVM heap allocations (ES_JAVA_OPTS) were limited to 1GB, preventing excessive RAM usage and ensuring the stack could operate reliably without impacting other services running on the host, such as the NAS and Pi-hole DNS server.
+
+### 2. Connecting the Host to the Container Network
+Since the ELK services run inside a Docker bridge network, the host system cannot send logs to them directly. To enable communication, Logstash was configured to listen on a custom non-privileged port (5140). The host's rsyslog service was then configured to forward log data to this port, allowing events to flow reliably into the ELK stack.
+

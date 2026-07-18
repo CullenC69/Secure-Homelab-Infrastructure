@@ -29,5 +29,19 @@ The ELK stack is notorious for its heavy memory requirements, particularly becau
 ### 2. Connecting the Host to the Container Network
 Since the ELK services run inside a Docker bridge network, the host system cannot send logs to them directly. To enable communication, Logstash was configured to listen on a custom non-privileged port (5140). The host's rsyslog service was then configured to forward log data to this port, allowing events to flow reliably into the ELK stack.
 
+<br>
+
 ## Verification & Operational Validation
+
+### Elasticsearch Shard and Index Health Status
+We can run an internal API check to comfirm that Elasticsearch is writing log files and organizing it correctly with no signs of performance or cluster health issues
+
+<img width="1441" height="253" alt="Screenshot 2026-07-18 192706" src="https://github.com/user-attachments/assets/82a9cd27-50e7-46d5-ad20-92469ca2b87f" />
+
+### Kibana SIEM Dashboard Interface
+Once the pipeline is running, Kibana converts the Elasticsearch data into an easy-to-use and searchable dashboard. The image below shows the SIEM dashboard actively monitoring events and activity on the server.  
+
+<img width="2558" height="1276" alt="Screenshot 2026-07-19 015404" src="https://github.com/user-attachments/assets/efb32c63-8f76-4954-a864-c6731d35ce00" />
+
+
 

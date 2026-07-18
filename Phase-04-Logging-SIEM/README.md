@@ -38,6 +38,8 @@ We can run an internal API check to comfirm that Elasticsearch is writing log fi
 
 <img width="1441" height="253" alt="Screenshot 2026-07-18 192706" src="https://github.com/user-attachments/assets/82a9cd27-50e7-46d5-ad20-92469ca2b87f" />
 
+<br>
+
 ### Kibana SIEM Dashboard Interface
 Once the pipeline is running, Kibana converts the Elasticsearch data into an easy-to-use and searchable dashboard. The image below shows the SIEM dashboard actively monitoring events and activity on the server.  
 

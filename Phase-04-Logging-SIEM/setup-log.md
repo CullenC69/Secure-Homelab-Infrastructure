@@ -14,6 +14,8 @@ We will then also should lock the setting permanently by editing the `sysctl.con
 vm.max_map_count=262144
 ```
 
+<br>
+
 # 2. Create the Logstash Pipeline Configuration
 
 We will need to create a config file to tell Logstash where to receive logs, how to process them, and where to send them.
@@ -28,4 +30,37 @@ sudo mkdir -p /etc/logstash/pipeline
 Now we can create and open the config file:
 ```
 sudo nano /etc/logstash/pipeline/logstash.conf
+```
+
+Add the following configuration:
+
+```
+input {
+  udp {
+    port => 5140
+    type => "syslog"
+  }
+  tcp {
+    port => 5140
+    type => "syslog"
+  }
+}
+
+filter {
+  if [type] == "syslog" {
+    grok {
+      match => { "message" => "%{SYSLOGTIMESTAMP:syslog_timestamp} %{SYSLOGHOST:syslog_hostname} %{DATA:syslog_program}(?:\[%{POSINT:syslog_pid}\])?: %{GREEDYDATA:syslog_message}" }
+    }
+    date {
+      match => [ "syslog_timestamp", "MMM  d HH:mm:ss", "MMM dd HH:mm:ss" ]
+    }
+  }
+}
+
+output {
+  elasticsearch {
+    hosts => ["http://elasticsearch:9200"]
+    index => "syslog-logs-%{+YYYY.MM}"
+  }
+}
 ```

@@ -64,3 +64,92 @@ output {
   }
 }
 ```
+
+<br>
+
+# 3. Run the ELK Containers
+
+The ELK stack is run using Docker containers. This keeps Elasticsearch, Logstash, and Kibana separate and makes the setup easier to manage.
+
+### Create a Docker Network
+
+Create a network so the three containers can communicate with each other.
+
+```bash
+sudo docker network create elk-network
+```
+
+This allows the containers to connect using their container names, such as `elasticsearch`, instead of needing to use IP addresses.
+
+### Start Elasticsearch
+
+Run Elasticsearch as a Docker container.
+
+```bash
+sudo docker run -d \
+  --name elasticsearch \
+  --net elk-network \
+  -p 9200:9200 \
+  -e "discovery.type=single-node" \
+  -e "ES_JAVA_OPTS=-Xms1g -Xmx1g" \
+  --restart=always \
+  elasticsearch:8.12.2
+```
+
+Some important options:
+
+* `-d` runs the container in the background.
+* `--name elasticsearch` gives the container an easy name to identify.
+* `--net elk-network` connects it to the ELK network.
+* `-p 9200:9200` allows Elasticsearch to receive connections on port `9200`.
+* `discovery.type=single-node` is used because this setup only has one Elasticsearch node.
+* `ES_JAVA_OPTS=-Xms1g -Xmx1g` limits Elasticsearch to **1 GB of memory**, which helps reduce resource usage.
+* `--restart=always` makes Docker restart the container if it stops.
+
+### Start Logstash
+
+Run Logstash and connect it to the same Docker network.
+
+```bash
+sudo docker run -d \
+  --name logstash \
+  --net elk-network \
+  -p 5140:5140/udp \
+  -p 5140:5140/tcp \
+  -v /etc/logstash/pipeline:/usr/share/logstash/pipeline \
+  -e "LS_JAVA_OPTS=-Xms1g -Xmx1g" \
+  --restart=always \
+  logstash:8.12.2
+```
+
+The pipeline folder is mounted into the container using:
+
+```bash
+-v /etc/logstash/pipeline:/usr/share/logstash/pipeline
+```
+
+This lets Logstash use the configuration file created in the previous step.
+
+Both TCP and UDP port `5140` are exposed so Logstash can receive Syslog messages using either protocol.
+
+The memory limit is also set to **1 GB** to keep resource usage under control.
+
+### Start Kibana
+
+Run Kibana and connect it to Elasticsearch.
+
+```bash
+sudo docker run -d \
+  --name kibana \
+  --net elk-network \
+  -p 5601:5601 \
+  -e "ELASTICSEARCH_HOSTS=http://elasticsearch:9200" \
+  --restart=always \
+  kibana:8.12.2
+```
+
+The `ELASTICSEARCH_HOSTS` setting tells Kibana where to find Elasticsearch.
+
+Port `5601` is used to access the Kibana web interface.
+
+

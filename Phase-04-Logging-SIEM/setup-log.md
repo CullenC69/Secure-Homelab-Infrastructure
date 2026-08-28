@@ -8,3 +8,24 @@ Running this command increases the maximum number of memory mappings that any si
 ```
 sudo sysctl -w vm.max_map_count=262144
 ```
+
+We will then also should lock the setting permanently by editing the `sysctl.conf` and adding this line to the bottom of the file:
+```
+vm.max_map_count=262144
+```
+
+# 2. Create the Logstash Pipeline Configuration
+
+We will need to create a config file to tell Logstash where to receive logs, how to process them, and where to send them.
+
+### Create the Pipeline Configuration File
+
+We will first create the directory where the Logstash pipeline configuration
+```
+sudo mkdir -p /etc/logstash/pipeline
+```
+
+Now we can create and open the config file:
+```
+sudo nano /etc/logstash/pipeline/logstash.conf
+```

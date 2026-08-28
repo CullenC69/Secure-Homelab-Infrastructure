@@ -75,7 +75,7 @@ The ELK stack is run using Docker containers. This keeps Elasticsearch, Logstash
 
 Create a network so the three containers can communicate with each other.
 
-```bash
+```
 sudo docker network create elk-network
 ```
 
@@ -85,7 +85,7 @@ This allows the containers to connect using their container names, such as `elas
 
 Run Elasticsearch as a Docker container.
 
-```bash
+```
 sudo docker run -d \
   --name elasticsearch \
   --net elk-network \
@@ -110,7 +110,7 @@ Some important options:
 
 Run Logstash and connect it to the same Docker network.
 
-```bash
+```
 sudo docker run -d \
   --name logstash \
   --net elk-network \
@@ -124,7 +124,7 @@ sudo docker run -d \
 
 The pipeline folder is mounted into the container using:
 
-```bash
+```
 -v /etc/logstash/pipeline:/usr/share/logstash/pipeline
 ```
 
@@ -138,7 +138,7 @@ The memory limit is also set to **1 GB** to keep resource usage under control.
 
 Run Kibana and connect it to Elasticsearch.
 
-```bash
+```
 sudo docker run -d \
   --name kibana \
   --net elk-network \
@@ -151,5 +151,48 @@ sudo docker run -d \
 The `ELASTICSEARCH_HOSTS` setting tells Kibana where to find Elasticsearch.
 
 Port `5601` is used to access the Kibana web interface.
+
+<br>
+
+# 4. Configure rsyslog to Send Logs to Logstash
+
+The server uses `rsyslog` to collect system logs. In this step, we configure it to send authentication-related logs to Logstash.
+
+### Create an rsyslog Rule
+
+Create a new configuration file for the Logstash forwarding rule.
+
+```
+sudo nano /etc/rsyslog.d/60-elk-forward.conf
+```
+
+The `/etc/rsyslog.d/` folder is used for additional rsyslog configuration files. Keeping this rule in a separate file makes it easier to manage.
+
+### Forward Authentication Logs to Logstash
+
+Add the following line:
+
+```
+auth,authpriv.* @@127.0.0.1:5140
+```
+
+This tells rsyslog to:
+
+* `auth,authpriv.*` — collect authentication and privilege-related logs.
+* `@@` — send the logs using **TCP**.
+* `127.0.0.1` — send them to the local server.
+* `5140` — send them to the Logstash listener on port `5140`.
+
+This allows authentication events, such as login attempts, to be sent to Logstash for processing and storage in Elasticsearch.
+
+Save the file and exit the editor.
+
+### Restart rsyslog
+
+Restart rsyslog so that it loads the new configuration.
+
+```
+sudo systemctl restart rsyslog
+```
 
 
